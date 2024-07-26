@@ -1,4 +1,6 @@
 function setMotivationalMessage(latestResult) {
+    
+    // Array of motivational messages
     var motivationalMessages = [
         "Don't give up! Keep trying and you'll improve!",
         "Good effort! Keep practicing and you'll get there!",
@@ -9,6 +11,7 @@ function setMotivationalMessage(latestResult) {
 
     var motivationalText = motivationalMessages[0]; // Default message
     if (latestResult) {
+        // Choose a different motivational message based on the user's latest score
         if (latestResult.score < 30) {
             motivationalText = motivationalMessages[0]; 
         } else if (latestResult.score < 50) {
@@ -21,5 +24,7 @@ function setMotivationalMessage(latestResult) {
             motivationalText = motivationalMessages[4];
         }
     }
+
+    // Update the the HTML element to set the chosen motivational message
     document.getElementById('motivation').textContent = motivationalText;
 }
